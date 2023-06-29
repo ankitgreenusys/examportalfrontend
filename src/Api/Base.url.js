@@ -1,3 +1,3 @@
-const BaseUrl = "http://localhost:5000"
+const BaseUrl = "https://greenusysexamportal.onrender.com/"
 
 export default BaseUrl;
