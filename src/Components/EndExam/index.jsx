@@ -32,11 +32,14 @@ const Index = () => {
             toastId: "custom-id-yes",
           });
         } else {
-          console.log(data);
+          // console.log(data);
           setResult(data.dta);
         }
       })
       .catch((err) => {
+        toast.error("Something went wrong", {
+          toastId: "custom-id",
+        });
         console.log(err);
       });
   }, []);
@@ -64,7 +67,8 @@ const Index = () => {
         </div>
         <div className="col-lg-4">
           <div className="detailsinfo">
-            Aadhar No. : <span className="detailsdta">{user?.addharNumber}</span>
+            Aadhar No. :{" "}
+            <span className="detailsdta">{user?.addharNumber}</span>
           </div>
         </div>
         <div className="col-lg-8 offset-lg-2">

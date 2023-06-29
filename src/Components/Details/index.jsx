@@ -10,7 +10,7 @@ const Index = () => {
   const { isLoading, user, logout } = React.useContext(AppContext);
 
   React.useEffect(() => {
-    console.log(user);
+    // console.log(user);
     if (!isLoading) {
       if (!user) {
         navigate("/login");
@@ -30,7 +30,7 @@ const Index = () => {
         });
       }
     }
-  }, [ isLoading, user]);
+  }, [isLoading, user]);
 
   const lgo = () => {
     navigate("/");
@@ -90,11 +90,11 @@ const Index = () => {
         <button onClick={lgo} className="exambtn btn-red">
           Logout
         </button>
-        {/* {!user?.isExamGiven && ( */}
+        {!user?.isExamGiven && (
           <Link to="/instructions" className="exambtn btn-green">
             Start Test
           </Link>
-        {/* )} */}
+        )}
       </div>
     </div>
   );

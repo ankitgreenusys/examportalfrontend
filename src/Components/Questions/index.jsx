@@ -33,7 +33,7 @@ const Index = () => {
             toastId: "custom-id-yes",
           });
         } else {
-          console.log(data);
+          // console.log(data);
         }
       });
   };
@@ -57,7 +57,7 @@ const Index = () => {
 
         if (data.error == "Test completed") navigate("/endexam");
       } else {
-        console.log(data);
+        // console.log(data);
         setQuestion(data);
       }
     } catch (err) {
@@ -88,7 +88,7 @@ const Index = () => {
           toastId: "custom-id-yes",
         });
       } else {
-        console.log(data);
+        // console.log(data);
       }
     } catch (err) {
       console.log(err);
@@ -118,7 +118,7 @@ const Index = () => {
           toastId: "custom-id-yes",
         });
       } else {
-        console.log(data);
+        // console.log(data);
       }
     } catch (err) {
       console.log(err);
@@ -187,37 +187,6 @@ const Index = () => {
     return () => clearInterval(interval);
   }, [timer]);
 
-  // React.useEffect(() => {
-  //   let tim = timer;
-
-  //   const interval2 = setInterval(() => {
-  //     tim = tim - 15;
-  //     fetch(Student_URL + "changeTimer", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //         Authorization: "Bearer " + userJwt,
-  //       },
-  //       body: JSON.stringify({
-  //         currentTimer: tim,
-  //       }),
-  //     })
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         if (data.error) {
-  //           toast.error(data.error, {
-  //             toastId: "custom-id-yes",
-  //           });
-  //           clearInterval(interval2);
-  //         } else {
-  //           console.log(data);
-  //         }
-  //       });
-  //   }, 15000);
-
-  //   return () => clearInterval(interval2);
-  // }, []);
-
   const handleAnswer = (e) => {
     setAnswer(e.target.value);
   };
@@ -238,7 +207,7 @@ const Index = () => {
     await submitAnswer();
     await nextquestion();
     setAnswer("");
-    console.log(answer);
+    // console.log(answer);
   };
 
   return (

@@ -18,7 +18,7 @@ const Context = ({ children }) => {
     setIsLoading(true);
 
     if (tokenData && userType) {
-      console.log("tokenData", tokenData);
+      // console.log("tokenData", tokenData);
       let url = "";
       if (userType === "admin") url = Admin_URL;
       else if (userType === "student") url = Student_URL;
@@ -40,7 +40,7 @@ const Context = ({ children }) => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
+          // console.log(data);
           if (data.user && data.user._id) {
             setUser(data.user);
             setUserJwt(tokenData);
@@ -62,7 +62,7 @@ const Context = ({ children }) => {
   }, [userJwt]);
 
   const login = (data, usertype) => {
-    console.log(data);
+    // console.log(data);
     setIsLoading(true);
     setError(null);
     setUser(null);
@@ -93,7 +93,7 @@ const Context = ({ children }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.error) {
           setError(data.error);
           setIsLoading(false);
@@ -111,7 +111,7 @@ const Context = ({ children }) => {
   };
 
   const logout = () => {
-    console.log(user);
+    // console.log(user);
     setUser(null);
     setUserJwt(null);
     localStorage.removeItem("token");

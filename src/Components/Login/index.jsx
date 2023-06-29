@@ -55,7 +55,7 @@ const Index = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formdata);
+    // console.log(formdata);
     login(formdata, "student");
   };
 

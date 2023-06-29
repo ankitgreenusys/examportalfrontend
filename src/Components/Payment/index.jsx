@@ -16,7 +16,7 @@ const Index = () => {
   const [islinksent, setIslinksent] = React.useState(false);
 
   React.useEffect(() => {
-    console.log(state);
+    // console.log(state);
 
     if (!state) {
       toast.error("Please login first");
