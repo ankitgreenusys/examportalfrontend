@@ -1,0 +1,117 @@
+.signup-body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.signup-body .form-holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.signup-body .form-holder .form-content {
+  position: relative;
+  text-align: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+  padding: 60px;
+}
+
+.signup-body .form-content .form-items {
+  border: 3px solid #fff;
+  padding: 40px;
+  display: inline-block;
+  width: 50vw;
+  max-width: 540px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  text-align: left;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+@media screen and (max-width: 575px) {
+  .signup-body .form-content .form-items {
+    width: 90vw;
+  }
+}
+
+.signup-body .form-content h3 {
+  color: #fff;
+  text-align: left;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.signup-body .form-content h3.form-title {
+  margin-bottom: 30px;
+}
+
+.signup-body .form-content p {
+  color: #fff;
+  text-align: left;
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 20px;
+  margin-bottom: 30px;
+}
+
+.signup-body .form-content label {
+  color: #fff;
+}
+
+.signup-body .form-content input[type="text"],
+.signup-body .form-content input[type="password"],
+.signup-body .form-content input[type="email"],
+.signup-body .form-content input[type="number"],
+.signup-body .form-content select {
+  width: 100%;
+  padding: 9px 20px;
+  text-align: left;
+  border: 0;
+  outline: 0;
+  border-radius: 6px;
+  background-color: #fff;
+  font-size: 15px;
+  font-weight: 300;
+  color: #000;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  margin-top: 16px;
+}
+
+.signup-body .btn-primary {
+  background-color: #6c757d;
+  outline: none;
+  border: 0px;
+  box-shadow: none;
+}
+
+.signup-body .btn-primary:hover,
+.signup-body .btn-primary:focus,
+.signup-body .btn-primary:active {
+  background-color: #495056;
+  outline: none !important;
+  border: none !important;
+  box-shadow: none;
+}
+
+#otpModalBtn {
+  display: none;
+}
+
+.otpmodal .modal-content {
+  background-color: #6c757d;
+}

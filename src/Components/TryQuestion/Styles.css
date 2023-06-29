@@ -1,0 +1,197 @@
+.tryques-page {
+  --bg: #17181c;
+  --fg: #e3e4e8;
+  --formBg: #2e3138;
+  --radioBg: #454954;
+  --radioBgActive: #5c6270;
+  --radioBorder: #454954;
+  --radioBorderActive: #5c6270;
+  --radioSide: #17181c;
+  --primary1: #255ff4;
+  --primary2: #5583f6;
+  --primary3: #86a6f9;
+  --primary4: #b6cafb;
+  --depth: -4.5em;
+  --ballDiam: 0.75em;
+  --xAngle: -30deg;
+  --yAngle: 45deg;
+  font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));
+}
+.tryques-page,
+.tryques-page h3,
+.tryques-page input {
+  color: var(--fg);
+  font: 1em/1.5 Hind, sans-serif;
+}
+.tryques-page,
+.tryques-page form,
+.tryques-page form h3,
+.tryques-page form label {
+  transform-style: preserve-3d;
+}
+.tryques-page {
+  background: var(--bg);
+  overflow-x: hidden;
+  padding-top: 1.5em;
+  height: 100vh;
+  text-align: center;
+}
+.tryques-page h3 {
+  font-weight: bold;
+}
+.tryques-page input[type="checkbox"] {
+  margin-right: 0.375em;
+}
+/* Layer setup */
+.tryques-page form {
+  box-shadow: 0 0 0 0.1em var(--radioBorder) inset;
+  max-width: 51em;
+  height: 400px;
+  margin: 10.5em auto 1.5em auto;
+  padding: 1.5em;
+  text-align: left;
+  transform: rotateX(0) rotateY(0) translateZ(calc(var(--depth) / -2));
+  transition: transform 0.25s linear;
+}
+
+.tryques-page form:before,
+.tryques-page form label:before,
+.tryques-page form h3:before,
+.dot,
+.dot-shadow {
+  position: absolute;
+}
+
+.tryques-page form:before,
+.tryques-page form input[type="radio"],
+.tryques-page form label:before,
+.tryques-page form h3:before {
+  transform: translateZ(var(--depth));
+}
+.tryques-page form:before {
+  background: var(--formBg);
+  content: "";
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.tryques-page input[type="checkbox"]:checked ~ form {
+  transform: rotateX(var(--xAngle)) rotateY(var(--yAngle))
+    translateZ(calc(var(--depth) / -2));
+}
+/* Radios */
+.tryques-page form input[type="radio"],
+.tryques-page form span,
+.tryques-page form label:before,
+.tryques-page form h3:before {
+  transition: all 0.15s linear;
+}
+.tryques-page form input[type="radio"],
+.tryques-page span {
+  border-radius: 50%;
+}
+.tryques-page form input[type="radio"] {
+  background: var(--radioBg);
+  box-shadow: 0 0 0 var(--radioSide), 0 0 0 0.1em var(--radioBorder) inset,
+    0 0 0 #0003;
+  margin-right: 0.5em;
+  width: 1.5em;
+  height: 1.5em;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.tryques-page input[type="checkbox"]:checked ~ form input[type="radio"] {
+  box-shadow: -0.25em -0.25em 0 var(--radioSide),
+    0 0 0 0.1em var(--radioBorder) inset, -0.25em -0.25em 0.25em #0005;
+}
+.tryques-page form input[type="radio"]:active,
+.tryques-page form input[type="radio"]:focus {
+  background: var(--radioBgActive);
+  box-shadow: 0 0 0 var(--radioSide), 0 0 0 0.1em var(--radioBorderActive) inset,
+    0 0 0 #0003;
+}
+.tryques-page input[type="checkbox"]:checked ~ form input[type="radio"]:active,
+.tryques-page input[type="checkbox"]:checked ~ form input[type="radio"]:focus {
+  box-shadow: -0.25em -0.25em 0 var(--radioSide),
+    0 0 0 0.1em var(--radioBorderActive) inset, -0.25em -0.25em 0.25em #0005;
+}
+.tryques-page form input[type="radio"]:focus {
+  outline: transparent;
+}
+/* Text shadows */
+.tryques-page form h3 {
+  position: relative;
+}
+.tryques-page form label {
+  cursor: pointer;
+  display: flex;
+  margin: 0.75em 0;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+}
+.tryques-page form label:before,
+.tryques-page form h3:before {
+  color: transparent;
+  content: attr(data-text);
+  top: 0;
+  text-shadow: 0 0 0.25em transparent;
+  transition-delay: 0.15s;
+}
+.tryques-page form label:before {
+  left: 2em;
+}
+input[type="checkbox"]:checked ~  form label:before,
+input[type="checkbox"]:checked ~  form h3:before {
+  text-shadow: 0 0 0.25em #0005;
+  transition-delay: 0;
+}
+.tryques-page form h3:before {
+  top: 0;
+  left: 0;
+}
+/* Dots */
+.tryques-page  .dot,
+.tryques-page .dot-shadow {
+  display: block;
+  pointer-events: none;
+  top: 0.375em;
+  left: 0.375em;
+  width: var(--ballDiam);
+  height: var(--ballDiam);
+}
+.tryques-page .dot {
+  background: var(--primary2);
+  box-shadow: -0.2em -0.2em 0.4em var(--primary1) inset,
+    0 0.2em 0.4em var(--primary3) inset;
+  transform: translateZ(var(--depth)) rotateY(0) rotateX(0) scale(0);
+}
+.tryques-page form input[type="radio"]:active ~ .dot,
+.tryques-page form input[type="radio"]:focus ~ .dot {
+  background: var(--primary3);
+  box-shadow: -0.2em -0.2em 0.4em var(--primary2) inset,
+    0 0.2em 0.4em var(--primary4) inset;
+}
+.tryques-page form input[type="radio"]:checked ~ .dot {
+  transform: translateZ(calc(var(--ballDiam) / -2)) rotateY(0) rotateX(0)
+    scale(1);
+}
+.tryques-page input[type="checkbox"]:checked ~ form input[type="radio"] ~ .dot {
+  transform: translateZ(var(--depth)) rotateY(calc(var(--yAngle) * -1))
+    rotateX(calc(var(--xAngle) * -1)) scale(0);
+}
+.tryques-page input[type="checkbox"]:checked ~ form input[type="radio"]:checked ~ .dot {
+  transform: translateZ(calc(var(--ballDiam) / -2))
+    rotateY(calc(var(--yAngle) * -1)) rotateX(calc(var(--xAngle) * -1)) scale(1);
+}
+/* Dot shadows */
+.tryques-page .dot-shadow {
+  background: radial-gradient(100% 100%, #000, #0000 50%);
+  opacity: 0.9;
+  transform: translateZ(var(--depth)) scale(0);
+}
+.tryques-page input[type="radio"]:checked ~ .dot-shadow {
+  opacity: 0.4;
+  transform: translateZ(var(--depth)) scale(1);
+}
