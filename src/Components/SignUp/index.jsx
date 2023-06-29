@@ -95,7 +95,7 @@ const Index = () => {
     };
     console.log(sndta);
     setloading(true);
-    fetch(Student_URL + "/signup", {
+    fetch(Student_URL + "signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

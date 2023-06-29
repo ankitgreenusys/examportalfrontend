@@ -14,7 +14,7 @@ const Index = () => {
   const [result, setResult] = React.useState({});
 
   React.useEffect(() => {
-    if (!user) {
+    if (!user || !userJwt) {
       navigate("/login");
     }
 

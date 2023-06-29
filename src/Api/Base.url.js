@@ -1,3 +1,3 @@
-const BaseUrl = "https://greenusysexamportal.onrender.com/"
+const BaseUrl = "https://greenusysexamportal.onrender.com"
 
 export default BaseUrl;
