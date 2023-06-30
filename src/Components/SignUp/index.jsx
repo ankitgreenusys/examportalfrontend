@@ -80,6 +80,7 @@ const Index = () => {
       itiTrade: ititrade[formdata.ititrade],
       password: formdata.password,
     };
+
     if (sndta.password.length < 6) {
       toast.error("Password must be of atleast 6 characters", {
         toastId: "custom-id-yes",
@@ -101,13 +102,13 @@ const Index = () => {
       return;
     }
 
-    if (sndta.itiTrade === "") {
+    if (formdata.ititrade === "") {
       toast.error("Please select ITI Trade", {
         toastId: "custom-id-yes",
       });
       return;
     }
-    if (sndta.yearOfPassing === "") {
+    if (formdata.passingyear === "") {
       toast.error("Please select Year of Passing", {
         toastId: "custom-id-yes",
       });
