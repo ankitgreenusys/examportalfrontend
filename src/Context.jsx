@@ -1,8 +1,8 @@
 import React from "react";
 
-import Admin_URL from "./Api/Admin.url";
-import Student_URL from "./Api/Student.url";
-import Teacher_URL from "./Api/Teacher.url";
+import Admin_URL from "./Common/Admin.url";
+import Student_URL from "./Common/Student.url";
+import Teacher_URL from "./Common/Teacher.url";
 
 const AppContext = React.createContext({});
 

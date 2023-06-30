@@ -5,7 +5,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AppContext } from "../../Context";
 
-import Student_URL from "../../Api/Student.url";
+import Student_URL from "../../Common/Student.url";
+import ititrade from "../../Common/ItiTrade.array";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -45,20 +46,6 @@ const Index = () => {
     "2014",
     "2013",
   ];
-  const ititrade = [
-    "Mechanic Desil",
-    "Mechanic Moter Cycle",
-    "Mechanic (Moter Vechicle)",
-    "Mechanic (Denting, Painting, Welding)",
-    "Poniter Genral",
-    "Welder (Gas and Electric)",
-    "TIG/MIG (Welder)",
-    "Carpenter",
-    "Apprentice Food Production (Cookery)",
-    "Mechanic (Repair & Maintenance)",
-    "Electronics Mechanic",
-    "Electrican",
-  ];
 
   const [formdata, setformdata] = React.useState({
     name: "",
@@ -93,7 +80,40 @@ const Index = () => {
       itiTrade: ititrade[formdata.ititrade],
       password: formdata.password,
     };
-    console.log(sndta);
+    if (sndta.password.length < 6) {
+      toast.error("Password must be of atleast 6 characters", {
+        toastId: "custom-id-yes",
+      });
+      return;
+    }
+
+    if (sndta.phoneNumber.length !== 10) {
+      toast.error("Phone Number must be of 10 digits", {
+        toastId: "custom-id-yes",
+      });
+      return;
+    }
+
+    if (sndta.addharNumber.length !== 12) {
+      toast.error("Aadhar Number must be of 12 digits", {
+        toastId: "custom-id-yes",
+      });
+      return;
+    }
+
+    if (sndta.itiTrade === "") {
+      toast.error("Please select ITI Trade", {
+        toastId: "custom-id-yes",
+      });
+      return;
+    }
+    if (sndta.yearOfPassing === "") {
+      toast.error("Please select Year of Passing", {
+        toastId: "custom-id-yes",
+      });
+      return;
+    }
+    // console.log(sndta);
     setloading(true);
     fetch(Student_URL + "signup", {
       method: "POST",
@@ -295,7 +315,7 @@ const Index = () => {
                     {loading ? (
                       <>
                         <span
-                          class="spinner-border spinner-border-sm mx-2"
+                          className="spinner-border spinner-border-sm mx-2"
                           role="status"
                           aria-hidden="true"
                         ></span>
@@ -322,14 +342,14 @@ const Index = () => {
       <button
         id="otpModalBtn"
         type="button"
-        class="btn btn-primary"
+        className="btn btn-primary"
         data-bs-toggle="modal"
         data-bs-target="#staticBackdrop"
       >
         Launch static backdrop modal
       </button>
       <div
-        class=" otpmodal modal fade"
+        className=" otpmodal modal fade"
         id="staticBackdrop"
         data-bs-backdrop="static"
         data-bs-keyboard="false"
@@ -337,20 +357,20 @@ const Index = () => {
         aria-labelledby="staticBackdropLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="staticBackdropLabel">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h1 className="modal-title fs-5" id="staticBackdropLabel">
                 Enter OTP sent to your email
               </h1>
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
+            <div className="modal-body">
               <h5>Otp has been sent to your email id : {formdata.email} </h5>
               <input
                 className="form-control mt-3"
@@ -360,16 +380,20 @@ const Index = () => {
                 onChange={(e) => setotp(e.target.value)}
               />
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
                 id="otpModalBtnclose"
                 type="button"
-                class="btn btn-danger"
+                className="btn btn-danger"
                 data-bs-dismiss="modal"
               >
                 Close
               </button>
-              <button onClick={handleotp} type="button" class="btn btn-success">
+              <button
+                onClick={handleotp}
+                type="button"
+                className="btn btn-success"
+              >
                 Submit
               </button>
             </div>

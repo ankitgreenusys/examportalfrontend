@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 import { AppContext } from "../../Context";
 
-import Student_URL from "../../Api/Student.url";
+import Student_URL from "../../Common/Student.url";
 
 const Index = () => {
   const navigate = useNavigate();

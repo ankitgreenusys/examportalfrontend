@@ -7,14 +7,14 @@ const Index = () => {
   const { user, logout } = React.useContext(AppContext);
 
   return (
-    <div class="homepage" id="parallax-wrapper">
-      <section class="d-flex justify-content-between align-items-center px-3 py-2">
-        <div class="">
+    <div className="homepage" id="parallax-wrapper">
+      <section className="d-flex justify-content-between align-items-center px-3 py-2">
+        <div className="">
           <hgroup>
             <h1>Greenusys</h1>
           </hgroup>
         </div>
-        <div class="d-flex">
+        <div className="d-flex">
           {!user ? (
             <>
               <Link to="/signup" className="btn mx-2 btn-white">
@@ -38,14 +38,14 @@ const Index = () => {
       </section>
 
       <section>
-        <div class="p-three parallax-inner">
+        <div className="p-three parallax-inner">
           <h2>About Greenusys</h2>
         </div>
       </section>
       <section>
-        <div class="content-text">
+        <div className="content-text">
           <p>
-            <span class="first-letter red">T</span>
+            <span className="first-letter red">T</span>
             he Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor
             voluptatibus cupiditate ipsa numquam sit, corporis ea voluptatum hic
             impedit. Maiores voluptatum ratione earum dolore consequuntur ad
@@ -55,7 +55,7 @@ const Index = () => {
             pariatur odit libero voluptatem eaque, quos recusandae est? Nesciunt
             repudiandae ducimus asperiores!
           </p>
-          <div class="line-break"></div>
+          <div className="line-break"></div>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi eius,
             exercitationem quos eos vero consequatur pariatur nisi modi voluptas
@@ -68,14 +68,14 @@ const Index = () => {
       </section>
 
       <section>
-        <div class="p-two parallax-inner">
+        <div className="p-two parallax-inner">
           <h2>About Exam Test</h2>
         </div>
       </section>
       <section>
-        <div class="content-text">
+        <div className="content-text">
           <p>
-            <span class="first-letter darkgreen">L</span>
+            <span className="first-letter darkgreen">L</span>
             orem ipsum dolor, sit amet consectetur adipisicing elit. Error amet
             adipisci facilis ipsum, esse quod aspernatur placeat laborum?
             Voluptates sed quos eius praesentium soluta officia vero quisquam
@@ -84,7 +84,7 @@ const Index = () => {
             distinctio voluptas cupiditate dolores blanditiis assumenda eaque
             esse incidunt officiis illum quae quasi culpa autem a aut. Sequi?
           </p>
-          <div class="line-break"></div>
+          <div className="line-break"></div>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique
             delectus id nisi doloremque. Minima culpa quis fuga velit
@@ -97,14 +97,14 @@ const Index = () => {
       </section>
 
       <section>
-        <div class="p-four parallax-inner">
+        <div className="p-four parallax-inner">
           <h2>Footer</h2>
         </div>
       </section>
 
       <footer>
         <p>
-          <span class="first-letter skyblue">G</span>Greenusys Technology, Noida
+          <span className="first-letter skyblue">G</span>Greenusys Technology, Noida
           Lorem, ipsum dolor.
         </p>
       </footer>

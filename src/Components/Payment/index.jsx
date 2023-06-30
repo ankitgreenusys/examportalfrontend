@@ -5,7 +5,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AppContext } from "../../Context";
 
-import Student_URL from "../../Api/Student.url";
+import Student_URL from "../../Common/Student.url";
 
 const Index = () => {
   const { state } = useLocation();
