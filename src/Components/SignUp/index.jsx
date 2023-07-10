@@ -7,6 +7,8 @@ import { AppContext } from "../../Context";
 
 import Student_URL from "../../Common/Student.url";
 import ititrade from "../../Common/ItiTrade.array";
+import passingyear from "../../Common/PassingYear.array";
+import category from "../../Common/Category.array";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -33,20 +35,6 @@ const Index = () => {
     }
   }, [isLoading]);
 
-  const passingyear = [
-    "Last Year",
-    "2022",
-    "2021",
-    "2020",
-    "2019",
-    "2018",
-    "2017",
-    "2016",
-    "2015",
-    "2014",
-    "2013",
-  ];
-
   const [formdata, setformdata] = React.useState({
     name: "",
     aadharno: "",
@@ -55,6 +43,7 @@ const Index = () => {
     passingyear: "",
     ititrade: "",
     password: "",
+    category: "",
   });
 
   const [loading, setloading] = React.useState(false);
@@ -79,6 +68,7 @@ const Index = () => {
       yearOfPassing: passingyear[formdata.passingyear],
       itiTrade: ititrade[formdata.ititrade],
       password: formdata.password,
+      category: category[formdata.category],
     };
 
     if (sndta.password.length < 6) {
@@ -249,6 +239,23 @@ const Index = () => {
                     onChange={handlechange}
                     required
                   />
+                </div>
+                <div className="col-md-12">
+                  <select
+                    onChange={handlechange}
+                    name="category"
+                    className="form-select mt-3"
+                    required
+                  >
+                    <option defaultValue hidden>
+                      Category
+                    </option>
+                    {category.map((cat, idx) => (
+                      <option key={idx} value={idx}>
+                        {cat}
+                      </option>
+                    ))}
+                  </select>
                 </div>
                 <div className="col-md-12">
                   <select

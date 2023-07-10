@@ -1,8 +1,6 @@
 import React from "react";
 
-import Admin_URL from "./Common/Admin.url";
 import Student_URL from "./Common/Student.url";
-import Teacher_URL from "./Common/Teacher.url";
 
 const AppContext = React.createContext({});
 
@@ -20,9 +18,7 @@ const Context = ({ children }) => {
     if (tokenData && userType) {
       // console.log("tokenData", tokenData);
       let url = "";
-      if (userType === "admin") url = Admin_URL;
-      else if (userType === "student") url = Student_URL;
-      else if (userType === "teacher") url = Teacher_URL;
+      if (userType === "student") url = Student_URL;
       else {
         setUser(null);
         setUserJwt(null);
